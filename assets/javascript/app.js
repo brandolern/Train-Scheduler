@@ -7,10 +7,13 @@ $(document).ready(function () {
         projectId: "train-scheduler-eb328",
         storageBucket: "train-scheduler-eb328.appspot.com",
         messagingSenderId: "1092815152813"
-    };
+    }
     firebase.initializeApp(config);
+
+    //Variable for database connection
     database = firebase.database();
 
+    //Train varibles
     var trainName
     var trainDestination
     var firstTime
@@ -18,6 +21,7 @@ $(document).ready(function () {
     var nextArrival
     var minutesAway
 
+    //On click function for submit button
     $("#add-train").on("click", function (event) {
         event.preventDefault();
 
@@ -30,8 +34,19 @@ $(document).ready(function () {
         var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
         var remainder = diffTime % trainFreq;
 
-        minutesAway = trainFreq - remainder;
         nextArrival = moment().add(minutesAway, "minutes").format("hh:mm");
+        minutesAway = trainFreq - remainder;
 
+        var newTrain = {
+            name: trainName,
+            destination: trainDestination,
+            frequency: trainFreq,
+            arrival: nextArrival,
+            minutes: minutesAway
+        };
+
+        database.ref().push(newTrain);
     });
+
+
 });
