@@ -1,5 +1,31 @@
+.jumbotron {
+    background-image: url(../images/tracks3.png);
+    background-size: 100%;
+    color: #fff;
+    padding: 3rem 1rem;
+}
+
+h1 {
+    font-size: 3rem;
+    text-shadow: 2px 2px #000;
+}
+
+.lead {
+
+    font-weight: 450;
+    text-shadow: 2px 2px #000;
+}
+
 .headers {
     font-size: 1.2em;
     font-weight: 500;
     padding: 10px 20px 10px 20px;
+}
+
+#train-form {
+    font-weight: 500;
+}
+
+.error {
+    color: red;
 }

@@ -13,9 +13,6 @@ $(document).ready(function () {
     //Variable for database connection
     database = firebase.database();
 
-    //Train varibles
-
-
     //On click function for submit button
     $("#add-train").on("click", function (event) {
         event.preventDefault();
@@ -24,7 +21,6 @@ $(document).ready(function () {
         var trainDestination = $("#train-destination").val().trim();
         var firstTrain = $("#train-time").val().trim();
         var trainFreq = $("#train-frequency").val().trim();
-        console.log(firstTrain)
 
         var firstTimeConverted = moment(firstTrain, "HH:mm").subtract(1, "years");
         var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
@@ -61,7 +57,8 @@ $(document).ready(function () {
             $("<td>").text(destination),
             $("<td>").text(frequency),
             $("<td>").text(arrival),
-            $("<td>").text(minutesAway)
+            $("<td>").text(minutesAway),
+
         );
 
         $("#train-table > tbody").append(newRow);
