@@ -13,6 +13,15 @@ $(document).ready(function () {
     //Variable for database connection
     database = firebase.database();
 
+    $("#train-form").validate({
+        rules: {
+            tname: "required",
+            tdestination: "required",
+            ttime: "required",
+            tfrequency: "required"
+        }
+    });
+
     //On click function for submit button
     $("#add-train").on("click", function (event) {
         event.preventDefault();

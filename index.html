@@ -2,7 +2,7 @@
 <html lang="en">
 
     <head>
-        <title>Train Scheduler</title>
+        <title>Train Central</title>
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -22,13 +22,17 @@
         <!-- Moment.js reference -->
         <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
         <!-- Form validation reference -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
         <!--Local javascript reference  -->
         <script src="assets/javascript/app.js"></script>
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
             integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <!-- Local CSS -->
         <link rel="stylesheet" href="assets/css/style.css">
+        <!-- Favicon links -->
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
     </head>
 
     <body>
@@ -43,7 +47,7 @@
                 <div class="col-sm-12">
                     <!-- Train Schedule table -->
                     <div class="card mb-4">
-                        <div class="card-header bg-info text-white headers">
+                        <div class="card-header bg-dark text-white headers">
                             Current Train Schedule
                         </div>
                         <div class="card-body">
@@ -69,50 +73,50 @@
                 <div class="col-md-12">
                     <!-- Add train form -->
                     <div class="card mb-4">
-                        <div class="card-header bg-info text-white headers">
+                        <div class="card-header bg-dark text-white headers">
                             Add Train
                         </div>
+
                         <div class="card-body">
-                            <form id="train-form" method="post">
+                            <form id="train-form">
                                 <div class="form-group">
                                     <label for="train-name">Train Name</label>
                                     <input class="form-control" id="train-name" placeholder="Train name" type="text"
-                                        name="train-name" required>
+                                        name="tname" required>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="train-destination">Destination</label>
                                     <input class="form-control" id="train-destination" placeholder="Train destination"
-                                        type="text" name="train-destination" aria-required="true" required>
+                                        type="text" name="tdestination" required>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="train-time">First Train Time </label>
                                     <input class="form-control" id="train-time" placeholder="Train time" type="time"
-                                        name="train-time" aria-required="true" required>
+                                        name="ttime" required>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="train-frequency">Frequency (min)</label>
                                     <input class="form-control" id="train-frequency" placeholder="Train frequency"
-                                        type="number" step="1" min="0" name="train-frequency" aria-required="true"
-                                        required>
+                                        type="number" step="1" min="0" name="tfrequency" required>
                                 </div>
 
-                                <button class="btn btn-info" id="add-train" type="submit"
-                                    name="add-train">Submit</button>
+                                <button class="btn btn-dark" id="add-train" type="submit">Submit</button>
 
                             </form>
-                            <script>
-                                $("#train-form").validate();
-                            </script>
+
 
                         </div>
+                        <!-- <script>
+                            $("#train-form").validate();
+                        </script> -->
+
                     </div>
                 </div>
             </div>
         </div>
-
 
     </body>
 

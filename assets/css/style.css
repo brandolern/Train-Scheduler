@@ -1,5 +1,5 @@
 .jumbotron {
-    background-image: url(../images/tracks3.png);
+    background-image: url(../images/tracks.png);
     background-size: 100%;
     color: #fff;
     padding: 3rem 1rem;
@@ -11,9 +11,9 @@ h1 {
 }
 
 .lead {
-
+    padding-top: 15px;
     font-weight: 450;
-    text-shadow: 2px 2px #000;
+    text-shadow: 1px 1px #000;
 }
 
 .headers {
